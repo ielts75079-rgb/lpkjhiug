@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Story ❤️</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI',sans-serif;
+}
+
+body{
+  background:black;
+  color:white;
+  overflow:hidden;
+}
+
+/* Page Layout */
+.page{
+  position:absolute;
+  width:100%;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity 1s ease;
+  overflow:hidden;
+}
+
+.page.active{
+  opacity:1;
+  pointer-events:auto;
+}
+
+/* Blurred background */
+.bg-blur{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background-size:cover;
+  background-position:center;
+  filter:blur(25px);
+  transform:scale(1.2);
+  z-index:0;
+}
+
+/* Dark overlay */
+.overlay{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.55);
+  z-index:1;
+}
+
+/* Center image */
+.main-img{
+  position:relative;
+  max-width:85%;
+  max-height:75vh;
+  border-radius:25px;
+  box-shadow:
+    0 0 30px rgba(255,77,109,0.8),
+    0 0 60px rgba(255,77,109,0.4);
+  z-index:2;
+  object-fit:contain;
+  transition:transform 6s ease;
+}
+
+/* Slow zoom effect */
+.page.active .main-img{
+  transform:scale(1.05);
+}
+
+/* Text content */
+.content{
+  position:absolute;
+  bottom:60px;
+  z-index:3;
+  text-align:center;
+  padding:20px;
+}
+
+.year{
+  position:absolute;
+  top:30px;
+  font-size:28px;
+  font-weight:bold;
+  z-index:3;
+}
+
+.floating{
+  animation:float 3s ease-in-out infinite;
+  font-size:24px;
+  max-width:90%;
+}
+
+@keyframes float{
+  0%{transform:translateY(0px);}
+  50%{transform:translateY(-8px);}
+  100%{transform:translateY(0px);}
+}
+
+button{
+  margin-top:25px;
+  padding:10px 25px;
+  font-size:18px;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+  background:#ff4d6d;
+  color:white;
+  transition:0.3s;
+}
+
+button:hover{
+  opacity:0.8;
+}
+
+#noBtn{
+  background:gray;
+}
+
+/* Roses */
+.rose{
+  position:absolute;
+  top:-50px;
+  font-size:24px;
+  animation:fall linear infinite;
+}
+
+@keyframes fall{
+  to{ transform:translateY(110vh); }
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE TEMPLATE REPEATED -->
+
+<div class="page active" id="page1">
+  <div class="bg-blur" style="background-image:url('https://github.com/ielts75079-rgb/-OUr-STOry/blob/main/IMG20210507093051.jpg?raw=true
+')"></div>
+  <div class="overlay"></div>
+  <img src="https://github.com/ielts75079-rgb/-OUr-STOry/blob/main/IMG20210507093051.jpg?raw=true">
+  <div class="year">BEGGING </div>
+  <div class="content">
+    <div class="floating">The day, my life was about to change.</div>
+    <button onclick="manualNext()">Next</button>
+  </div>
+</div>
+
+<div class="page" id="page2">
+  <div class="bg-blur" style="background-image:url('https://github.com/ielts75079-rgb/-OUr-STOry/blob/70467560a97423b98f1442980a072b9f96f79d3e/IMG_20211231_153017.jpg
+    ')"></div>
+  <div class="overlay"></div>
+  <img src="https://github.com/ielts75079-rgb/-OUr-STOry/blob/70467560a97423b98f1442980a072b9f96f79d3e/IMG_20211231_153017.jpg">
+  <div class="year">CONTINUE</div>
+  <div class="content">
+    <div class="floating">In good times and bad, in smiles and tears, I’ll be right beside you — never against you..</div>
+    <button onclick="manualNext()">Next</button>
+  </div>
+</div>
+
+<div class="page" id="page3">
+  <div class="bg-blur" style="background-image:url('https://github.com/ielts75079-rgb/-OUr-STOry/blob/70467560a97423b98f1442980a072b9f96f79d3e/IMG-20240407-WA0003.jpg
+    ')"></div>
+  <div class="overlay"></div>
+  <img src="https://github.com/ielts75079-rgb/-OUr-STOry/blob/70467560a97423b98f1442980a072b9f96f79d3e/IMG-20240407-WA0003.jpg">
+  <div class="year">FEELING SPECIAL</div>
+  <div class="content">
+    <div class="floating">Your goals are important to me. I will encourage you and cheer for you in everything you want to achieve. 😌</div>
+    <button onclick="manualNext()">Next</button>
+  </div>
+</div>
+
+  <div class="page" id="page4">
+  <div class="bg-blur" style="background-image:url('https://github.com/ielts75079-rgb/-OUr-STOry/blob/70467560a97423b98f1442980a072b9f96f79d3e/IMG20220426100244.jpg
+    ')"></div>
+  <div class="overlay"></div>
+  <img src="https://github.com/ielts75079-rgb/-OUr-STOry/blob/70467560a97423b98f1442980a072b9f96f79d3e/IMG20220426100244.jpg">
+  <div class="year">UNDERSTANDING</div>
+  <div class="content">
+    <div class="floating">From strangers to partners in crime 😌</div>
+    <button onclick="manualNext()">Next</button>
+  </div>
+</div>
+
+  <div class="page" id="page5">
+  <div class="bg-blur" style="background-image:url('https://github.com/ielts75079-rgb/-OUr-STOry/blob/70467560a97423b98f1442980a072b9f96f79d3e/IMG20220626111011.jpg
+')"></div>
+  <div class="overlay"></div>
+  <img src="https://github.com/ielts75079-rgb/-OUr-STOry/blob/70467560a97423b98f1442980a072b9f96f79d3e/IMG20220626111011.jpg">
+  <div class="year">STAY</div>
+  <div class="content">
+    <div class="floating">My heart is yours, and I will always stay faithful and committed to us. 😌</div>
+    <button onclick="manualNext()">Next</button>
+  </div>
+</div>
+
+  <div class="page " id="page6">
+  <div class="bg-blur" style="background-image:url('https://github.com/ielts75079-rgb/-OUr-STOry/blob/70467560a97423b98f1442980a072b9f96f79d3e/WhatsApp%20Image%202025-05-18%20at%2015.45.03_90b3280d.jpg
+')"></div>
+  <div class="overlay"></div>
+  <img src="https://github.com/ielts75079-rgb/-OUr-STOry/blob/70467560a97423b98f1442980a072b9f96f79d3e/WhatsApp%20Image%202025-05-18%20at%2015.45.03_90b3280d.jpg">
+  <div class="year">HAPPINESS</div>
+  <div class="content">
+    <div class="floating">I will always respect your feelings, your dreams, your choices, and the amazing person you are..</div>
+    <button onclick="manualNext()">Next</button>
+  </div>
+</div>
+
+  <div class="page" id="page7">
+  <div class="bg-blur" style="background-image:url('https://github.com/ielts75079-rgb/-OUr-STOry/blob/70467560a97423b98f1442980a072b9f96f79d3e/4a667c9c-4c16-4c50-805f-70a1e8d97fc3.jpg
+ ')"></div>
+  <div class="overlay"></div>
+  <img src="https://github.com/ielts75079-rgb/-OUr-STOry/blob/70467560a97423b98f1442980a072b9f96f79d3e/4a667c9c-4c16-4c50-805f-70a1e8d97fc3.jpg">
+  <div class="year">FRIENDS</div>
+  <div class="content">
+    <div class="floating">You smiled… and suddenly everything felt lighter.</div>
+    <button onclick="manualNext()">Next</button>
+  </div>
+</div>
+
+  <div class="page" id="page8">
+  <div class="bg-blur" style="background-image:url('://github.com/ielts75079-rgb/-OUr-STOry/blob/70467560a97423b98f1442980a072b9f96f79d3e/2a30418e-47f9-47f6-a99d-c02cca014f12.jpg
+')"></div>
+  <div class="overlay"></div>
+  <img src="https://github.com/ielts75079-rgb/-OUr-STOry/blob/70467560a97423b98f1442980a072b9f96f79d3e/2a30418e-47f9-47f6-a99d-c02cca014f12.jpg">
+  <div class="year">PARTNER</div>
+  <div class="content">
+    <div class="floating">Not just on Valentine’s Day, but every single day — in little ways and big ways. 😌</div>
+    <button onclick="manualNext()">Next</button>
+  </div>
+</div>
+  <div class="page" id="page9">
+  <div class="bg-blur" style="background-image:url('https://github.com/ielts75079-rgb/-OUr-STOry/blob/70467560a97423b98f1442980a072b9f96f79d3e/5133d7ec-47b3-4d9f-9e85-3b4dcc2b10d4.jpg
+
+ ')"></div>
+  <div class="overlay"></div>
+  <img src="https://github.com/ielts75079-rgb/-OUr-STOry/blob/70467560a97423b98f1442980a072b9f96f79d3e/5133d7ec-47b3-4d9f-9e85-3b4dcc2b10d4.jpg">
+  <div class="year">BIG DREAMS</div>
+  <div class="content">
+    <div class="floating">Always try my best to bring a smile to your face..</div>
+    <button onclick="manualNext()">Next</button>
+  </div>
+</div>
+
+  <div class="page " id="page10">
+  <div class="bg-blur" style="background-image:url('https://github.com/ielts75079-rgb/-OUr-STOry/blob/70467560a97423b98f1442980a072b9f96f79d3e/WhatsApp%20Image%202025-04-18%20at%2017.49.13_866091fb.jpg
+    ')"></div>
+  <div class="overlay"></div>
+  <img src="https://github.com/ielts75079-rgb/-OUr-STOry/blob/70467560a97423b98f1442980a072b9f96f79d3e/WhatsApp%20Image%202025-04-18%20at%2017.49.13_866091fb.jpg">
+  <div class="year">2026</div>
+  <div class="content">
+    <div class="floating">I promise to love you endlessly.Not just today, but every day.With all my heart. 💕.</div>
+    <button onclick="manualNext()">Next</button>
+  </div>
+</div>
+
+
+<!-- You can duplicate same structure for page4,5,6 and just change image + text -->
+
+<div class="page" id="page11">
+  <div class="bg-blur" style="background-image:url('image1.jpg')"></div>
+  <div class="overlay"></div>
+  <img src="image1.jpg" class="main-img">
+  <div class="year">Forever</div>
+  <div class="content" id="finalContent">
+    <div class="floating">After all these memories… Will you stay with me forever?</div>
+    <br>
+    <button onclick="yesClick()">YES 💖</button>
+    <button id="noBtn" onclick="noClick()">NO 🙄</button>
+  </div>
+</div>
+
+<script>
+let currentPage=1;
+const totalPages=11;
+let autoSlide;
+let roseInterval;
+
+function showPage(num){
+  for(let i=1;i<=totalPages;i++){
+    document.getElementById("page"+i).classList.remove("active");
+  }
+  document.getElementById("page"+num).classList.add("active");
+
+  if(num===11){
+    clearInterval(autoSlide);
+    startRoses();
+  }
+}
+
+function nextPage(){
+  if(currentPage<totalPages){
+    currentPage++;
+    showPage(currentPage);
+  }
+}
+
+function manualNext(){
+  clearInterval(autoSlide);
+  nextPage();
+  autoSlide=setInterval(nextPage,18000);
+}
+
+function yesClick(){
+  document.getElementById("finalContent").innerHTML=`
+  <div class="floating">
+  You just made the best decision of your life 💖<br><br>
+  I promise to protect your heart,<br>
+  annoy you forever,<br>
+  and stay beside you no matter what.<br><br>
+  Forever starts now.
+  </div>`;
+}
+
+function noClick(){
+  const btn=document.getElementById("noBtn");
+  btn.style.position="absolute";
+  btn.style.left=Math.random()*80+"vw";
+  btn.style.top=Math.random()*80+"vh";
+}
+
+function createRose(){
+  const rose=document.createElement("div");
+  rose.classList.add("rose");
+  rose.innerHTML="🌹";
+  rose.style.left=Math.random()*100+"vw";
+  rose.style.animationDuration=(3+Math.random()*5)+"s";
+  document.body.appendChild(rose);
+  setTimeout(()=>{rose.remove();},8000);
+}
+
+function startRoses(){
+  roseInterval=setInterval(createRose,500);
+}
+
+window.onload=function(){
+  autoSlide=setInterval(nextPage,18000);
+};
+</script>
+
+</body>
+</html>
